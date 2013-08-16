@@ -7,16 +7,18 @@ transposed to the end of the word and an ay is affixed
 for more information on rules.
 """
 
-word = raw_input('What\'s your word? ').lower()
-vowels = 'aeiou'
+pyg = 'ay'
 
-pig = 'ay'
+original = raw_input('Enter a word:')
 
-first = word[0]
-
-if first in vowels:
-    new = word + pig
+if len(original) > 0 and original.isalpha():
+    word = original.lower()
+    first = word[0]
+    if first in ["a","e","i","o","u"]:
+        new_word = word + pyg
+        print new_word
+    else:
+        new_word = word[1:] + word[0] + pyg
+        print new_word
 else:
-    new = word[1:] + first + pig
-
-print new
+    print 'empty'
